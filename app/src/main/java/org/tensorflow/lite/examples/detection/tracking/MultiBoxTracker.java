@@ -168,7 +168,7 @@ public  class MultiBoxTracker {
               labelString.contains("keyboard")||labelString.contains("cell phone")||labelString.contains("book")||
               labelString.contains("clock")||labelString.contains("tv")||labelString.contains("car")||
               labelString.contains("camera")||labelString.contains("donut")||labelString.contains("car")||
-              labelString.contains("tia")||labelString.contains("base"))
+              labelString.contains("tia")||labelString.contains("base")||labelString.contains("suitcase"))
       {
 
           return true;
