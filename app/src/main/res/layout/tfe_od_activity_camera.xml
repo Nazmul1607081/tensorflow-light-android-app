@@ -24,7 +24,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="436dp"
+        android:layout_height="match_parent"
         android:background="@android:color/black"
         android:orientation="vertical"
         app:layout_anchorGravity="bottom|center">
@@ -46,14 +46,13 @@
         </androidx.appcompat.widget.Toolbar>
 
 
-
     </RelativeLayout>
 
 
     <WebView
         android:id="@+id/webviewid"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></WebView>
+        android:layout_height="3dp"></WebView>
 
     <include
         android:id="@+id/bottom_sheet_layout"

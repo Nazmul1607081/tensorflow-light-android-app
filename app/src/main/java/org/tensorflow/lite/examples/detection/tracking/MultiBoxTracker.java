@@ -167,15 +167,12 @@ public  class MultiBoxTracker {
               labelString.contains("mouse")||labelString.contains("remote")||labelString.contains("backpack")||
               labelString.contains("keyboard")||labelString.contains("cell phone")||labelString.contains("book")||
               labelString.contains("clock")||labelString.contains("tv")||labelString.contains("car")||
-              labelString.contains("camera"))
+              labelString.contains("camera")||labelString.contains("donut")||labelString.contains("car"))
       {
 
           return true;
       }
-      else
-      {
-          return false;
-      }
+
 
     }
     return false;
