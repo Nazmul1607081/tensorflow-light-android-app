@@ -138,7 +138,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
     trackingOverlay = (OverlayView) findViewById(R.id.tracking_overlay);
     AlertDialog alertDialog = new AlertDialog.Builder(this,android.R.style.Theme_Black_NoTitleBar_Fullscreen).create();
-    alertDialog.setMessage("You can capture any kind of video here");
+    alertDialog.setMessage("You can't capture any kind of video here");
 
     trackingOverlay.addCallback(
         new DrawCallback() {
@@ -147,14 +147,16 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
            boolean f = tracker.draw(canvas,getBaseContext());
            if(f)
            {
-            alertDialog.show();
-           // Toast.makeText(getBaseContext(),"camera detected",Toast.LENGTH_LONG).show();;
+             Toast.makeText(getBaseContext(),"camera like device detected or nothing detected",Toast.LENGTH_SHORT).show();;
+             alertDialog.show();
+
            }
-           else {
+           else  {
              if(alertDialog.isShowing())
              {
+               Toast.makeText(getBaseContext(),"only person is detected",Toast.LENGTH_SHORT).show();;
                alertDialog.dismiss();
-              // Toast.makeText(getBaseContext(),"alright",Toast.LENGTH_LONG).show();;
+
              }
            }
           }

@@ -143,6 +143,9 @@ public  class MultiBoxTracker {
             (int) (multiplier * (rotated ? frameWidth : frameHeight)),
             sensorOrientation,
             false);
+
+    boolean onlyPerson = false;
+    int objectCount = 0;
     for (final TrackedRecognition recognition : trackedObjects) {
       final RectF trackedPos = new RectF(recognition.location);
 
@@ -162,7 +165,7 @@ public  class MultiBoxTracker {
           canvas, trackedPos.left + cornerSize, trackedPos.top, labelString + "%", boxPaint);
       globallabel = labelString;
 
-      if(labelString.contains("backpack")||labelString.contains("frisbee")||labelString.contains("skis")||
+      /*if(labelString.contains("backpack")||labelString.contains("frisbee")||labelString.contains("skis")||
               labelString.contains("snowboard")||labelString.contains("kite")||labelString.contains("laptop")||
               labelString.contains("mouse")||labelString.contains("remote")||labelString.contains("backpack")||
               labelString.contains("keyboard")||labelString.contains("cell phone")||labelString.contains("book")||
@@ -172,11 +175,24 @@ public  class MultiBoxTracker {
       {
 
           return true;
+      }*/
+      if(!labelString.contains("person"))
+      {
+        return true;
       }
-
+      if(labelString.contains("person")){
+        onlyPerson = true;
+      }
+      objectCount ++;
 
     }
-    return false;
+    if(onlyPerson && objectCount == 1)
+    {
+      return false;
+    }
+    else {
+      return true;
+    }
 
   }
 

@@ -52,7 +52,7 @@
     <WebView
         android:id="@+id/webviewid"
         android:layout_width="match_parent"
-        android:layout_height="3dp"></WebView>
+        android:layout_height="match_parent"></WebView>
 
     <include
         android:id="@+id/bottom_sheet_layout"
